@@ -70,18 +70,21 @@ class LaravelBaseInstallCommand extends Command
                 $this->installNpmDependencies();
             }
 
-            // Step 5: Run database migrations
+            // Step 5: Create database
+            $this->createDatabase();
+
+            // Step 6: Run database migrations
             $this->runMigrations();
 
-            // Step 6: Create base user
+            // Step 7: Create base user
             if (!$this->option('skip-user')) {
                 $this->createBaseUser();
             }
 
-            // Step 7: Set application name
+            // Step 8: Set application name
             $this->setApplicationName();
 
-            // Step 8: Build frontend assets
+            // Step 9: Build frontend assets
             if (!$this->option('skip-npm')) {
                 $this->buildAssets();
             }
@@ -266,6 +269,36 @@ class LaravelBaseInstallCommand extends Command
         }
 
         $this->info('  • NPM dependencies installed');
+    }
+
+    /**
+     * Create SQLite database file if it doesn't exist
+     */
+    private function createDatabase(): void
+    {
+        $this->info('🗃️  Setting up database...');
+
+        try {
+            $databasePath = database_path('database.sqlite');
+
+            if (!file_exists($databasePath)) {
+                // Create database directory if it doesn't exist
+                $databaseDir = dirname($databasePath);
+                if (!is_dir($databaseDir)) {
+                    mkdir($databaseDir, 0755, true);
+                }
+
+                // Create empty SQLite database file
+                touch($databasePath);
+                chmod($databasePath, 0664);
+
+                $this->info('  • SQLite database created at: ' . $databasePath);
+            } else {
+                $this->info('  • SQLite database already exists');
+            }
+        } catch (Exception $e) {
+            throw new Exception('Failed to create database: ' . $e->getMessage());
+        }
     }
 
     /**

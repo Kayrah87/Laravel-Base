@@ -22,6 +22,9 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
+# Database
+/database/database.sqlite
+
 /public/build
 /storage/pail
 .env.backup
