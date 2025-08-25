@@ -6,61 +6,60 @@
         <title>Laravel Base</title>
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-        <style>
-            /* Basic styling for now */
-            body { font-family: 'Figtree', sans-serif; margin: 0; padding: 0; background: #f9fafb; }
-            .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-            .header { text-align: center; margin-bottom: 3rem; }
-            .title { font-size: 3rem; font-weight: 600; color: #1f2937; margin-bottom: 1rem; }
-            .subtitle { font-size: 1.25rem; color: #6b7280; }
-            .card { background: white; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); padding: 2rem; margin-bottom: 2rem; }
-            .feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-            .feature { padding: 1rem; border-left: 4px solid #3b82f6; }
-            .feature h3 { color: #1f2937; margin: 0 0 0.5rem 0; }
-            .feature p { color: #6b7280; margin: 0; }
-        </style>
+        @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
-        <div class="container">
-            <div class="header">
-                <h1 class="title">Laravel Base Template</h1>
-                <p class="subtitle">A comprehensive Laravel starter template with modern packages and console commands</p>
+    <body class="font-sans bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 py-8">
+            <div class="text-center mb-12">
+                <h1 class="text-5xl font-semibold text-gray-900 mb-4">Laravel Base Template</h1>
+                <p class="text-xl text-gray-600">A comprehensive Laravel starter template with modern packages and console commands</p>
             </div>
 
-            <div class="card">
-                <h2>🎉 Installation Successful!</h2>
-                <p>Your Laravel Base template has been successfully set up with the following core components:</p>
+            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4">🎉 Installation Successful!</h2>
+                <p class="text-gray-600 mb-6">Your Laravel Base template has been successfully set up with the following core components:</p>
                 
-                <div class="feature-grid">
-                    <div class="feature">
-                        <h3>Laravel 11</h3>
-                        <p>Latest stable Laravel framework with all modern features</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-4 border-l-4 border-blue-500">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Laravel 12</h3>
+                        <p class="text-gray-600">Latest stable Laravel framework with all modern features</p>
                     </div>
-                    <div class="feature">
-                        <h3>PEST Testing</h3>
-                        <p>Modern PHP testing framework included and configured</p>
+                    <div class="p-4 border-l-4 border-green-500">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">PEST Testing</h3>
+                        <p class="text-gray-600">Modern PHP testing framework included and configured</p>
                     </div>
-                    <div class="feature">
-                        <h3>Laravel Sanctum</h3>
-                        <p>API authentication system ready to use</p>
+                    <div class="p-4 border-l-4 border-purple-500">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Laravel Sanctum</h3>
+                        <p class="text-gray-600">API authentication system ready to use</p>
                     </div>
-                    <div class="feature">
-                        <h3>Console Commands</h3>
-                        <p>Custom artisan commands for package installation and setup</p>
+                    <div class="p-4 border-l-4 border-orange-500">
+                        <h3 class="text-lg font-medium text-gray-900 mb-2">Tailwind CSS</h3>
+                        <p class="text-gray-600">Utility-first CSS framework with Vite integration</p>
                     </div>
                 </div>
             </div>
 
-            <div class="card">
-                <h2>🚀 Next Steps</h2>
-                <p>Use the following artisan commands to install additional packages:</p>
-                <ul>
-                    <li><code>php artisan install:spatie-packages</code> - Install all Spatie packages</li>
-                    <li><code>php artisan install:livewire</code> - Install Livewire 3 with VOLT</li>
-                    <li><code>php artisan install:frontend</code> - Install Tailwind 4 and frontend assets</li>
-                    <li><code>php artisan install:optional</code> - Interactive installer for optional packages</li>
-                    <li><code>php artisan blueprint:walkthrough</code> - Interactive model generator</li>
-                </ul>
+            <div class="bg-white rounded-lg shadow-sm p-8">
+                <h2 class="text-2xl font-semibold text-gray-900 mb-4">🚀 Development Setup Complete</h2>
+                <p class="text-gray-600 mb-4">Your Laravel 12 application is now ready for development with:</p>
+                <div class="space-y-2 text-sm">
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                        <span class="text-gray-700">Laravel Framework 12.25.0</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                        <span class="text-gray-700">Tailwind CSS 3 with Vite</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-purple-500 rounded-full"></span>
+                        <span class="text-gray-700">Alpine.js for reactive components</span>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="w-2 h-2 bg-yellow-500 rounded-full"></span>
+                        <span class="text-gray-700">VS Code debug configuration</span>
+                    </div>
+                </div>
             </div>
         </div>
     </body>
