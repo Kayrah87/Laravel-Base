@@ -20,7 +20,7 @@
             </div>
         </div>
         <div class="pt-4 text-sm text-gray-500 dark:text-gray-400">
-            <pre class="h-[32.5rem] rounded-md dark:bg-gray-800 border dark:border-gray-700"><template x-if="true"><code
+            <pre class="h-130 rounded-md dark:bg-gray-800 border dark:border-gray-700"><template x-if="true"><code
                     style="display: none;"
                     id="frame-<?php echo e($loop->index); ?>"
                     class="language-php highlightable-code <?php if($loop->index === $exception->defaultFrame()): ?> default-highlightable-code <?php endif; ?> scrollbar-hidden overflow-y-hidden"

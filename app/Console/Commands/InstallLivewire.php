@@ -118,16 +118,16 @@ PHP;
 
         // Create Counter view
         $counterView = <<<'BLADE'
-<div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow">
+<div class="flex items-center space-x-4 p-4 bg-white rounded-lg shadow-sm">
     <button wire:click="decrement" 
-            class="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 transition">
+            class="px-4 py-2 bg-red-500 text-white rounded-sm hover:bg-red-600 transition">
         -
     </button>
     
     <span class="text-2xl font-semibold">{{ $count }}</span>
     
     <button wire:click="increment" 
-            class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition">
+            class="px-4 py-2 bg-blue-500 text-white rounded-sm hover:bg-blue-600 transition">
         +
     </button>
 </div>
@@ -158,7 +158,7 @@ BLADE;
     </head>
     <body class="bg-gray-100">
         <div class="min-h-screen">
-            <nav class="bg-white shadow">
+            <nav class="bg-white shadow-sm">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex items-center">
@@ -191,7 +191,7 @@ BLADE;
     <x-slot name="title">Welcome</x-slot>
 
     <div class="space-y-6">
-        <div class="bg-white overflow-hidden shadow rounded-lg p-6">
+        <div class="bg-white overflow-hidden shadow-sm rounded-lg p-6">
             <h2 class="text-2xl font-semibold mb-4">🎉 Livewire is Ready!</h2>
             <p class="text-gray-600 mb-6">Your Laravel Base template now includes Livewire 3 for reactive components.</p>
             
@@ -199,11 +199,11 @@ BLADE;
             <livewire:counter />
         </div>
         
-        <div class="bg-white overflow-hidden shadow rounded-lg p-6">
+        <div class="bg-white overflow-hidden shadow-sm rounded-lg p-6">
             <h3 class="text-lg font-semibold mb-3">🚀 Next Steps</h3>
             <ul class="space-y-2 text-gray-600">
-                <li>• Create components: <code class="bg-gray-100 px-2 py-1 rounded">php artisan make:livewire ComponentName</code></li>
-                <li>• Use in views: <code class="bg-gray-100 px-2 py-1 rounded">&lt;livewire:component-name /&gt;</code></li>
+                <li>• Create components: <code class="bg-gray-100 px-2 py-1 rounded-sm">php artisan make:livewire ComponentName</code></li>
+                <li>• Use in views: <code class="bg-gray-100 px-2 py-1 rounded-sm">&lt;livewire:component-name /&gt;</code></li>
                 <li>• Add real-time features with wire:poll, wire:model, wire:click</li>
             </ul>
         </div>

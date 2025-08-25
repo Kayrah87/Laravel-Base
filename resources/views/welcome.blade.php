@@ -15,7 +15,7 @@
                 <p class="text-xl text-gray-600">A comprehensive Laravel starter template with modern packages and console commands</p>
             </div>
 
-            <div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+            <div class="bg-white rounded-lg shadow-xs p-8 mb-8">
                 <h2 class="text-2xl font-semibold text-gray-900 mb-4">🎉 Installation Successful!</h2>
                 <p class="text-gray-600 mb-6">Your Laravel Base template has been successfully set up with the following core components:</p>
                 
@@ -39,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="bg-white rounded-lg shadow-sm p-8">
+            <div class="bg-white rounded-lg shadow-xs p-8">
                 <h2 class="text-2xl font-semibold text-gray-900 mb-4">🚀 Development Setup Complete</h2>
                 <p class="text-gray-600 mb-4">Your Laravel 12 application is now ready for development with:</p>
                 <div class="space-y-2 text-sm">

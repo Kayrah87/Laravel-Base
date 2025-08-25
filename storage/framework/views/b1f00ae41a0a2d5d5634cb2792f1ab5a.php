@@ -22,18 +22,18 @@
         <span class="font-semibold text-gray-900 dark:text-white">Headers</span>
     </div>
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
+    <dl class="mt-1 grid grid-cols-1 rounded-sm border dark:border-gray-800">
         <?php $__empty_1 = true; $__currentLoopData = $exception->requestHeaders(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $key => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
             <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
                 <span
                     data-tippy-content="<?php echo e($key); ?>"
-                    class="lg:text-md w-[8rem] flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]"
+                    class="lg:text-md w-32 flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-48"
                 >
                     <?php echo e($key); ?>
 
                 </span>
                 <span
-                    class="min-w-0 flex-grow"
+                    class="min-w-0 grow"
                     style="
                         -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
                     "
@@ -43,7 +43,7 @@
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
             <span
-                class="min-w-0 flex-grow"
+                class="min-w-0 grow"
                 style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
             >
                 <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No headers data</code></pre>
@@ -55,10 +55,10 @@
         <span class="font-semibold text-gray-900 dark:text-white">Body</span>
     </div>
 
-    <div class="mt-1 rounded border dark:border-gray-800">
+    <div class="mt-1 rounded-sm border dark:border-gray-800">
         <div class="flex items-center">
             <span
-                class="min-w-0 flex-grow"
+                class="min-w-0 grow"
                 style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
             >
                 <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x"><?php echo e($exception->requestBody() ?: 'No body data'); ?></code></pre>
@@ -95,16 +95,16 @@
         <span class="font-semibold text-gray-900 dark:text-white"> Routing </span>
     </div>
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
+    <dl class="mt-1 grid grid-cols-1 rounded-sm border dark:border-gray-800">
         <?php $__empty_1 = true; $__currentLoopData = $exception->applicationRouteContext(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $name => $value): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
             <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
                 <span
                     data-tippy-content="<?php echo e($name); ?>"
-                    class="lg:text-md w-[8rem] flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]"
+                    class="lg:text-md w-32 flex-none cursor-pointer truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-48"
                     ><?php echo e($name); ?></span
                 >
                 <span
-                    class="min-w-0 flex-grow"
+                    class="min-w-0 grow"
                     style="
                         -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
                     "
@@ -114,7 +114,7 @@
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
             <span
-                class="min-w-0 flex-grow"
+                class="min-w-0 grow"
                 style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
             >
                 <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No routing data</code></pre>
@@ -127,10 +127,10 @@
             <span class="text-gray-900 dark:text-white text-sm"> Routing Parameters </span>
         </div>
 
-        <div class="mt-1 rounded border dark:border-gray-800">
+        <div class="mt-1 rounded-sm border dark:border-gray-800">
             <div class="flex items-center">
                 <span
-                    class="min-w-0 flex-grow"
+                    class="min-w-0 grow"
                     style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
                 >
                     <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x"><?php echo e($routeParametersContext); ?></code></pre>
@@ -148,15 +148,15 @@
         </span>
     </div>
 
-    <dl class="mt-1 grid grid-cols-1 rounded border dark:border-gray-800">
+    <dl class="mt-1 grid grid-cols-1 rounded-sm border dark:border-gray-800">
         <?php $__empty_1 = true; $__currentLoopData = $exception->applicationQueries(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as ['connectionName' => $connectionName, 'sql' => $sql, 'time' => $time]): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
             <div class="flex items-center gap-2 <?php echo e($loop->first ? '' : 'border-t'); ?> dark:border-gray-800">
-                <div class="lg:text-md w-[8rem] flex-none truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-[12rem]">
+                <div class="lg:text-md w-32 flex-none truncate border-r px-5 py-3 text-sm dark:border-gray-800 lg:w-48">
                     <span><?php echo e($connectionName); ?></span>
                     <span class="hidden text-xs text-gray-500 lg:inline-block">(<?php echo e($time); ?> ms)</span>
                 </div>
                 <span
-                    class="min-w-0 flex-grow"
+                    class="min-w-0 grow"
                     style="
                         -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem));
                     "
@@ -166,7 +166,7 @@
             </div>
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
             <span
-                class="min-w-0 flex-grow"
+                class="min-w-0 grow"
                 style="-webkit-mask-image: linear-gradient(90deg, transparent 0, #000 1rem, #000 calc(100% - 3rem), transparent calc(100% - 1rem))"
             >
                 <pre class="scrollbar-hidden mx-5 my-3 overflow-y-hidden text-xs lg:text-sm"><code class="overflow-y-hidden scrollbar-hidden overflow-x-scroll scrollbar-hidden-x">No query data</code></pre>
