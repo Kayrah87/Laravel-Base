@@ -18,7 +18,7 @@
             <div class="bg-white rounded-lg shadow-xs p-8 mb-8">
                 <h2 class="text-2xl font-semibold text-gray-900 mb-4">🎉 Installation Successful!</h2>
                 <p class="text-gray-600 mb-6">Your Laravel Base template has been successfully set up with the following core components:</p>
-                
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="p-4 border-l-4 border-blue-500">
                         <h3 class="text-lg font-medium text-gray-900 mb-2">Laravel 12</h3>

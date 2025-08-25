@@ -17,7 +17,7 @@ class LaravelBaseInstallCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'laravel-base:install 
+    protected $signature = 'laravel-base:install
                             {--name= : The application name (default: Laravel-Base)}
                             {--user-name= : The default user name (default: Admin)}
                             {--user-email= : The default user email (default: admin@example.com)}
@@ -145,7 +145,7 @@ class LaravelBaseInstallCommand extends Command
         if (!$this->option('skip-composer') && !$this->option('skip-npm')) {
             $this->newLine();
             $this->info('📦 Installation Options');
-            
+
             if ($this->confirm('Install Composer dependencies?', true)) {
                 // Keep default (don't skip)
             } else {
@@ -170,7 +170,7 @@ class LaravelBaseInstallCommand extends Command
         $this->info('📋 Installation Configuration:');
         $this->info('────────────────────────────────────────');
         $this->info('• Application Name: ' . ($this->option('name') ?: 'Laravel-Base'));
-        
+
         if (!$this->option('skip-user')) {
             $this->info('• Admin User: ' . ($this->option('user-name') ?: 'Admin'));
             $this->info('• Admin Email: ' . ($this->option('user-email') ?: 'admin@example.com'));
@@ -178,7 +178,7 @@ class LaravelBaseInstallCommand extends Command
         } else {
             $this->info('• Admin User: Skipped');
         }
-        
+
         $this->info('• Composer Install: ' . ($this->option('skip-composer') ? 'Skipped' : 'Yes'));
         $this->info('• NPM Install: ' . ($this->option('skip-npm') ? 'Skipped' : 'Yes'));
         $this->newLine();
@@ -231,13 +231,13 @@ class LaravelBaseInstallCommand extends Command
     private function installComposerDependencies(): void
     {
         $this->info('📦 Installing Composer dependencies...');
-        
+
         $result = Process::run('composer install --no-dev --optimize-autoloader');
 
         if ($result->failed()) {
             $this->warn('  • Composer install failed, trying with dev dependencies...');
             $result = Process::run('composer install');
-            
+
             if ($result->failed()) {
                 throw new Exception('Failed to install Composer dependencies: ' . $result->errorOutput());
             }
@@ -375,36 +375,36 @@ class LaravelBaseInstallCommand extends Command
         $this->info('────────────────────────────────────────');
         $this->info('✅ Environment file: .env created');
         $this->info('✅ Application key: Generated');
-        
+
         if (!$this->option('skip-composer')) {
             $this->info('✅ Composer: Dependencies installed');
         }
-        
+
         if (!$this->option('skip-npm')) {
             $this->info('✅ NPM: Dependencies installed');
             $this->info('✅ Assets: Built for production');
         }
-        
+
         $this->info('✅ Database: Migrations completed');
-        
+
         if (!$this->option('skip-user')) {
             $this->info('✅ Base User: Created');
         }
-        
+
         $this->info('✅ App Name: ' . ($this->option('name') ?: 'Laravel-Base'));
-        
+
         $this->newLine();
         $this->info('🚀 Next Steps:');
         $this->info('  • Start the development server: php artisan serve');
-        
+
         if (!$this->option('skip-npm')) {
             $this->info('  • Start Vite dev server: npm run dev');
         }
-        
+
         if (!$this->option('skip-user')) {
             $this->info('  • Login with: ' . ($this->option('user-email') ?: 'admin@example.com') . ' / ' . ($this->option('user-password') ?: 'password'));
         }
-        
+
         $this->info('  • Visit: http://localhost:8000');
     }
 }

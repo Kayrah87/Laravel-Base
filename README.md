@@ -198,7 +198,7 @@ This template includes complete VS Code configuration for Laravel development:
 ```bash
 # Available debug configurations in VS Code:
 # 1. "Launch Laravel Server (Port 8000)" - Basic Laravel server
-# 2. "PHP Xdebug Listen" - For debugging with breakpoints  
+# 2. "PHP Xdebug Listen" - For debugging with breakpoints
 # 3. "Laravel with Xdebug (Port 8000)" - Laravel server with Xdebug enabled
 ```
 
@@ -406,7 +406,7 @@ tests/
 # Install production dependencies
 composer install --no-dev --optimize-autoloader
 
-# Build frontend assets for production  
+# Build frontend assets for production
 npm run build
 
 # Optimize Laravel for production
