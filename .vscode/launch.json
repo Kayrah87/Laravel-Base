@@ -2,6 +2,23 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Launch Vite Dev Server",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": [
+                "run",
+                "dev"
+            ],
+            "console": "integratedTerminal",
+            "serverReadyAction": {
+                "pattern": "➜.*Local:.*?(https?://localhost:\\d+)",
+                "uriFormat": "%s",
+                "action": "openExternally"
+            }
+        },
+        {
             "name": "Launch Laravel Server (Port 8000)",
             "type": "php",
             "request": "launch",
@@ -72,10 +89,17 @@
     ],
     "compounds": [
         {
-            "name": "🚀 Laravel + Edge Browser",
-            "configurations": [],
-            "preLaunchTask": "Laravel Serve",
-            "postDebugTask": "open-edge-8777"
+            "name": "🚀 Laravel + Vite Dev + Edge Browser",
+            "configurations": [
+                "Launch Laravel Server (Port 8000)"
+            ],
+            "preLaunchTask": "Vite Dev Server"
+        },
+        {
+            "name": "🚀 Laravel Only + Edge Browser",
+            "configurations": [
+                "Launch Laravel Server (Port 8000)"
+            ]
         }
     ]
 }

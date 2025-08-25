@@ -16,9 +16,9 @@
             "problemMatcher": []
         },
         {
-            "label": "open-edge-8000",
+            "label": "open-edge-5173",
             "type": "shell",
-            "command": "sleep 3 && microsoft-edge http://localhost:8000",
+            "command": "sleep 3 && microsoft-edge http://localhost:5173",
             "group": "test",
             "presentation": {
                 "echo": false,
@@ -32,6 +32,19 @@
             }
         },
         {
+            "label": "open-edge-8000",
+            "type": "shell",
+            "command": "sleep 3 && microsoft-edge http://localhost:8000",
+            "group": "test",
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "open-in-edge",
             "type": "shell",
             "command": "sleep 2 && microsoft-edge http://localhost:8000",
@@ -43,6 +56,47 @@
                 "panel": "shared"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Vite Dev Server",
+            "type": "shell",
+            "command": "npm",
+            "args": [
+                "run",
+                "dev"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "new",
+                "showReuseMessage": false
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "vite",
+                "fileLocation": "absolute",
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*VITE.*ready in.*",
+                    "endsPattern": "^.*➜.*Local:.*http://localhost.*"
+                }
+            },
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "runOptions": {
+                "reevaluateOnRerun": false
+            }
         },
         {
             "label": "Laravel Serve",
@@ -86,10 +140,47 @@
             }
         },
         {
-            "label": "Stop Laravel Server",
+            "label": "Stop Vite Server",
             "type": "shell",
             "command": "pkill",
-            "args": ["-f", "php artisan serve"],
+            "args": [
+                "-f",
+                "vite dev"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "silent",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Laravel + Vite Dev",
+            "dependsOrder": "parallel",
+            "dependsOn": [
+                "Laravel Serve",
+                "Vite Dev Server"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new",
+                "showReuseMessage": false
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Stop All Laravel Processes",
+            "type": "shell",
+            "command": "pkill",
+            "args": [
+                "-f",
+                "php artisan serve"
+            ],
             "group": "build",
             "presentation": {
                 "echo": true,
